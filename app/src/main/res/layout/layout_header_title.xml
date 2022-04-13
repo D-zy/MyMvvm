@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/rootView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true">
+
+                <com.google.android.material.appbar.AppBarLayout
+                    android:id="@+id/appBarLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/app"
+                    android:fitsSystemWindows="true"
+                    android:theme="@style/AppTheme.AppBarOverlay"
+                    app:elevation="0dp">
+
+                    <!--
+                      app:layout_behavior="@string/appbar_layout_overscrollview_behavior"
+                     app:statusBarScrim="#FFC107"-->
+                    <com.google.android.material.appbar.CollapsingToolbarLayout
+                        android:id="@+id/toolbar_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:collapsedTitleGravity="left"
+                        app:contentScrim="@color/app"
+                        app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                        <!-- 1. 背景图-->
+                        <ImageView
+                            android:id="@+id/main_back_img1"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:scaleType="fitXY"
+                            android:src="#9BC0C5"
+                            app:layout_constraintDimensionRatio="1.8125"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.Toolbar
+                            android:id="@+id/toolbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:tag="toolbar"
+                            app:layout_collapseMode="pin"
+                            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+                    </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+                </com.google.android.material.appbar.AppBarLayout>
+
+                <!--        app:behavior_overlapTop="80dp"-->
+
+                <androidx.core.widget.NestedScrollView
+                    android:id="@+id/ns"
+                    android:layout_width="match_parent"
+                    android:layout_height="1500dp"
+                    android:background="@color/white"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="500dp"
+                        android:gravity="center"
+                        android:paddingTop="1700dp"
+                        android:text="adga" />
+
+                </androidx.core.widget.NestedScrollView>
+
+                <!-- 2. 顶部Header部分-->
+                <!--                <com.aries.ui.view.title.TitleBarView-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content">-->
+                <!--                    -->
+                <!--                </com.aries.ui.view.title.TitleBarView>-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/main_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/main_top_logo"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="6dp"
+                        android:src="@drawable/main_top_logo"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintDimensionRatio="5.011111111"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/main_message"
+                        android:layout_width="46dp"
+                        android:layout_height="wrap_content"
+                        android:drawableTop="@drawable/message"
+                        android:drawablePadding="3dp"
+                        android:gravity="center_horizontal"
+                        android:text="消息"
+                        android:textColor="#fff"
+                        android:textSize="9sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/main_scan"
+                        android:layout_width="46dp"
+                        android:layout_height="wrap_content"
+                        android:drawableTop="@drawable/scan"
+                        android:drawablePadding="3dp"
+                        android:gravity="center_horizontal"
+                        android:text="扫啊扫"
+                        android:textColor="#fff"
+                        android:textSize="9sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toLeftOf="@+id/main_message"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+            <!-- 3. 搜索框-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/searchLayout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingVertical="9dp"
+                android:translationY="50dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.aries.ui.view.radius.RadiusFrameLayout
+                    android:id="@+id/main_search_back"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:rv_backgroundColor="@color/white"
+                    app:rv_radius="16dp" />
+
+                <ImageView
+                    android:id="@+id/main_search_icon"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/search"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="@+id/main_search_back"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="13dp"
+                    android:text="家电冰箱"
+                    android:textColor="#cdcdcd"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/main_search_icon"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/main_search_camera"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_marginRight="12dp"
+                    android:src="@drawable/camera"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="@+id/main_search_back"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

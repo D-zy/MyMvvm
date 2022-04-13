@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--    <item>-->
+<!--        <color android:color="@color/colorAccent" />-->
+<!--    </item>-->
+
+<!--    <item-->
+<!--        android:drawable="@drawable/ic_main_add"-->
+<!--        android:gravity="top|center_horizontal"-->
+<!--        android:top="20dip">-->
+<!--                <bitmap-->
+<!--                    android:gravity="fill"-->
+<!--                    android:src="@drawable/ic_main_add" />-->
+<!--    </item>-->
+
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="180"
+                android:centerX="0.5"
+                android:centerY="0.5"
+                android:endColor="#95C7EF"
+                android:startColor="#2196F3"
+                android:type="linear"/>
+<!--            <size android:width="640dp" android:height="360dp"/>-->
+        </shape>
+    </item>
+    <item
+        android:gravity="center"  >
+        <shape android:shape="oval" >
+            <solid android:color="#66ffffff"/>
+            <size android:width="200dip" android:height="200dip"/>
+        </shape>
+    </item>
+
+<!--    <item android:bottom="207dp"  >-->
+<!--        <shape android:shape="oval" >-->
+<!--            <solid android:color="#66ffffff"/>-->
+<!--            <size android:width="306dp" android:height="306dp"/>-->
+<!--        </shape>-->
+<!--    </item>-->
+
+<!--    <item android:top="230dp" android:left="-50dp" android:right="400dp" android:bottom="-200dp">-->
+<!--        <shape android:shape="oval" >-->
+<!--            <solid android:color="#66ffffff"/>-->
+<!--            <size android:width="400dp" android:height="400dp"/>-->
+<!--        </shape>-->
+<!--    </item>-->
+
+
+
+
+</layer-list>

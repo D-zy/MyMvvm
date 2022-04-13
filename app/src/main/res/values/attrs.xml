@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="XEditText">
+        <attr name="xText" format="string" />
+        <attr name="xHint" format="string" />
+        <attr name="xMaxLength" format="integer" />
+        <attr name="xIsPwd" format="boolean" />
+        <attr name="xIsNum" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="CountDownView">
+        <!--显示时长-->
+        <attr name="duration" format="integer" />
+        <!--内容文字-->
+        <attr name="android:text" />
+        <!--字体大小-->
+        <attr name="android:textSize" />
+        <!--字体颜色-->
+        <attr name="android:textColor" />
+        <!--行字体长度，用作分割文本的依据。-->
+        <attr name="lineTextLength" format="integer" />
+        <!--背景颜色-->
+        <attr name="backgroundColor" format="color" />
+        <!--当前进度-->
+        <attr name="progress" format="float" />
+        <!--最大进度-->
+        <attr name="progressMax" format="float" />
+        <!--进度条宽度-->
+        <attr name="progressBarWidth" format="dimension" />
+        <!--进度条颜色-->
+        <attr name="progressBarColor" format="color" />
+        <!--进度条的线是否有弧度，默认为false。-->
+        <attr name="roundStrokeCap" format="boolean" />
+        <!--进度条模式-->
+        <attr name="progressBarMode">
+            <!--顺时针从无到有-->
+            <enum name="clockwiseFromNothing" value="0x02" />
+            <!--顺时针从有到无-->
+            <enum name="clockwiseFromExist" value="0x03" />
+            <!--逆时针从无到有-->
+            <enum name="anticlockwiseFromNothing" value="0x00" />
+            <!--逆时针从有到无-->
+            <enum name="anticlockwiseFromExist" value="0x01" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="LottieTabView">
+        <attr name="text_selected_color" format="color"/>
+        <attr name="text_normal_color" format="color"/>
+        <attr name="text_size" format="dimension"/>
+        <attr name="lottie_path" format="string"/>
+        <attr name="icon_normal" format="reference"/>
+        <attr name="tab_selected" format="boolean"/>
+        <attr name="tab_name" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="ViewBehavior">
+        <attr name="behavior_dependsOn" format="reference"/>
+        <attr name="behavior_dependType">
+            <enum name="height" value="0"/>
+            <enum name="width" value="1"/>
+            <enum name="x" value="2"/>
+            <enum name="y" value="3"/>
+        </attr>
+
+        <attr name="behavior_dependTarget" format="dimension"/>
+
+        <attr name="behavior_targetX" format="dimension"/>
+        <attr name="behavior_targetY" format="dimension"/>
+        <attr name="behavior_targetWidth" format="dimension"/>
+        <attr name="behavior_targetHeight" format="dimension"/>
+        <attr name="behavior_targetBackgroundColor" format="color"/>
+        <attr name="behavior_targetAlpha" format="float"/>
+        <attr name="behavior_targetScale" format="float"/>
+        <attr name="behavior_targetRotateX" format="float"/>
+        <attr name="behavior_targetRotateY" format="float"/>
+
+        <attr name="behavior_animation" format="reference"/>
+    </declare-styleable>
+
+    <!--白色主题样式，，注意每一项都不能少-->
+    <style name="picture.white.style" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <!--标题栏背景色-->
+        <item name="colorPrimary">@color/picture_color_white</item>
+        <!--状态栏背景色-->
+        <item name="colorPrimaryDark">@color/picture_color_black</item>
+        <!--是否改变图片列表界面状态栏字体颜色为黑色-->
+        <item name="picture.statusFontColor">true</item>
+        <!--返回键图标-->
+        <item name="picture.leftBack.icon">@drawable/ic_back</item>
+        <!--标题下拉箭头-->
+<!--        <item name="picture.arrow_down.icon">@drawable/icon_arrow_down</item>-->
+        <!--标题上拉箭头-->
+<!--        <item name="picture.arrow_up.icon">@drawable/icon_arrow_up</item>-->
+        <!--标题文字颜色-->
+        <item name="picture.title.textColor">@color/white</item>
+        <!--标题栏右边文字-->
+        <item name="picture.right.textColor">@color/white</item>
+        <!--图片列表勾选样式-->
+<!--        <item name="picture.checked.style">@drawable/selector_picture_select</item>-->
+        <!--开启图片列表勾选数字模式,开启的话勾选样式要换-->
+        <item name="picture.style.checkNumMode">false</item>
+        <!--选择图片样式0/9-->
+        <item name="picture.style.numComplete">true</item>
+        <!--图片列表底部背景色-->
+        <item name="picture.bottom.bg">@color/colorf8f8f8</item>
+        <!--图片列表预览文字颜色-->
+        <item name="picture.preview.textColor">@color/colorGray</item>
+        <!--图片列表已完成文字颜色-->
+        <item name="picture.complete.textColor">@color/colorGray</item>
+        <!--图片已选数量圆点背景色-->
+        <item name="picture.num.style">@drawable/picture_num_oval</item>
+        <!--预览界面标题栏背景色-->
+        <item name="picture.ac_preview.title.bg">@color/picture_color_white</item>
+        <!--预览界面标题文字颜色-->
+        <item name="picture.ac_preview.title.textColor">@color/white</item>
+        <!--预览界面已完成文字颜色-->
+        <item name="picture.ac_preview.complete.textColor">@color/colorGray
+        </item>
+        <!--预览界面底部背景色-->
+        <item name="picture.ac_preview.bottom.bg">@color/picture_color_fa</item>
+        <!--预览界面返回箭头-->
+        <item name="picture.preview.leftBack.icon">@drawable/ic_back</item>
+        <!--裁剪页面标题背景色-->
+        <item name="picture.crop.toolbar.bg">@color/picture_color_white</item>
+        <!--裁剪页面状态栏颜色-->
+        <item name="picture.crop.status.color">@color/picture_color_white</item>
+        <!--裁剪页面标题文字颜色-->
+        <item name="picture.crop.title.color">@color/white</item>
+        <!--相册文件夹列表选中图标-->
+<!--        <item name="picture.folder_checked_dot">@drawable/selector_picture_select</item>-->
+        <!--原图勾选样式-->
+<!--        <item name="picture.original.check.style">@drawable/selector_picture_select</item>-->
+        <!--原图字体颜色-->
+        <item name="picture.original.text.color">@color/picture_color_53575e</item>
+        <!--标题栏高度-->
+        <item name="picture.titleBar.height">48dp</item>
+    </style>
+
+
+</resources>

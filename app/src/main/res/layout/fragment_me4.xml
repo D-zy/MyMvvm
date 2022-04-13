@@ -1,0 +1,225 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.eg.viewmodel.state.MeViewModel" />
+    </data>
+
+    <com.aries.ui.view.ObservableScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:fitsSystemWindows="true"
+                android:theme="@style/AppTheme.AppBarOverlay"
+                app:layout_behavior="@string/appbar_zoom_behavior">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:id="@+id/appBarLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:contentScrim="@color/app"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                    <ImageView
+                        android:id="@+id/iv_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:minHeight="100dp"
+                        android:scaleType="centerCrop"
+                        app:layout_collapseMode="parallax" />
+
+                    <LinearLayout
+                        android:id="@+id/llcontent"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center|top"
+                        android:layout_marginTop="?attr/actionBarSize"
+                        android:orientation="vertical"
+                        android:paddingBottom="30dp"
+                        app:layout_behavior="@string/simple_view_behavior"
+                        app:layout_collapseMode="parallax"
+                        app:layout_collapseParallaxMultiplier="0.4">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="70dp"
+                            android:drawableStart="@android:drawable/ic_lock_idle_charging"
+                            android:drawablePadding="3dp"
+                            android:gravity="center_vertical"
+                            android:text="我的在线简历"
+                            android:textSize="14sp" />
+
+                        <com.allen.library.CircleImageView
+                            android:id="@+id/avater"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="top|end"
+                            android:layout_marginTop="-80dp"
+                            android:layout_marginEnd="16dp"
+                            android:elevation="10dp"
+                            android:src="@drawable/ic_avater" />
+
+                        <include
+                            layout="@layout/layout_a1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="40dp" />
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        app:layout_collapseMode="pin"
+                        app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/ns"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:text="large_text" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/logout"
+                        style="@style/ButtonPress"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginHorizontal="40dp"
+                        android:layout_marginTop="120dp"
+                        android:background="@drawable/selector_button_radius"
+                        android:gravity="center"
+                        android:text="退出"
+                        app:layout_constraintTop_toBottomOf="@id/xet_pwd" />
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+            <com.allen.library.SuperButton
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:gravity="left"
+                android:text="升级VIP专享求职特权\n8项专属特权加倍提升求职效率"
+                android:textColor="@color/white"
+                app:layout_anchor="@id/appBarLayout"
+                app:layout_anchorGravity="bottom|center"
+                app:sCornersTopLeftRadius="20dp"
+                app:sCornersTopRightRadius="20dp"
+                app:sSolidColor="#253726" />
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/titlebar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/app">
+
+                <!--            <TextView-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:text="sfasgag" />-->
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="?attr/actionBarSize"
+                android:elevation="10dp"
+                android:src="@drawable/ic_avater"
+                android:text="Joker"
+                android:textColor="@color/white"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                app:behavior_dependTarget="-200dp"
+                app:behavior_dependType="y"
+                app:behavior_dependsOn="@+id/appBarLayout"
+                app:behavior_targetScale="0.7"
+                app:behavior_targetX="0dp"
+                app:behavior_targetY="8dp"
+                app:layout_behavior="@string/simple_view_behavior" />
+
+            <!--        <com.allen.library.CircleImageView-->
+            <!--            android:id="@+id/avater"-->
+            <!--            android:layout_width="80dp"-->
+            <!--            android:layout_height="80dp"-->
+            <!--            android:layout_gravity="top|end"-->
+            <!--            android:layout_marginEnd="30dp"-->
+            <!--            android:layout_marginTop="100dp"-->
+            <!--            android:elevation="10dp"-->
+            <!--            android:src="@drawable/ic_avater"-->
+            <!--            app:behavior_dependTarget="-260dp"-->
+            <!--            app:behavior_dependType="y"-->
+            <!--            app:behavior_dependsOn="@+id/app_bar"-->
+            <!--            app:behavior_targetHeight="30dp"-->
+            <!--            app:behavior_targetWidth="30dp"-->
+            <!--            app:behavior_targetX="16dp"-->
+            <!--            app:behavior_targetY="8dp" />-->
+
+            <!--        <TextView-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="?attr/actionBarSize"-->
+            <!--            android:layout_marginStart="72dp"-->
+            <!--            android:layout_marginTop="-100dp"-->
+            <!--            android:alpha="0"-->
+            <!--            android:elevation="10dp"-->
+            <!--            android:gravity="center_vertical"-->
+            <!--            android:text="Joker"-->
+            <!--            android:textColor="@color/white"-->
+            <!--            android:textSize="18sp"-->
+            <!--            app:behavior_dependTarget="-240dp"-->
+            <!--            app:behavior_dependType="y"-->
+            <!--            app:behavior_dependsOn="@+id/app_bar"-->
+            <!--            app:behavior_targetAlpha="1"-->
+            <!--            app:behavior_targetY="0dp"-->
+            <!--            app:layout_behavior="@string/simple_view_behavior" />-->
+
+            <ImageView
+                android:id="@+id/xx"
+                android:layout_width="wrap_content"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_gravity="end"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="6dp"
+                android:src="@android:drawable/ic_menu_set_as"
+                android:tintMode="@color/white" />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </com.aries.ui.view.ObservableScrollView>
+</layout>

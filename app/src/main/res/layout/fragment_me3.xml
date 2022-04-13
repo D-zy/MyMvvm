@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.eg.viewmodel.state.MeViewModel" />
+    </data>
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="340dp"
+            android:background="@drawable/ic_bg"
+            android:fitsSystemWindows="true"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            app:elevation="0dp">
+
+            <!--                app:statusBarScrim="#FFC107"-->
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/toolbar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:contentScrim="@color/app"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center|top"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingTop="190dp"
+                    app:layout_collapseMode="parallax"
+                    app:layout_collapseParallaxMultiplier="0.5">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="HI!"
+                        android:textColor="@android:color/white"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:text="I am Amornchai, Mobile Application Developer living in Tokyo, Japan " />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/ns"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:text="large_text" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/logout"
+                    style="@style/ButtonPress"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_marginTop="120dp"
+                    android:background="@drawable/selector_button_radius"
+                    android:gravity="center"
+                    android:text="退出"
+                    app:layout_constraintTop_toBottomOf="@id/xet_pwd" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.allen.library.CircleImageView
+            android:id="@+id/avater"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="top"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="100dp"
+            android:elevation="10dp"
+            android:src="@drawable/ic_avater"
+            app:behavior_dependTarget="-260dp"
+            app:behavior_dependType="y"
+            app:behavior_dependsOn="@+id/appBarLayout"
+            app:behavior_targetHeight="40dp"
+            app:behavior_targetWidth="40dp"
+            app:behavior_targetX="16dp"
+            app:behavior_targetY="8dp"
+            app:layout_behavior="@string/simple_view_behavior" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="-100dp"
+            android:alpha="0"
+            android:elevation="10dp"
+            android:gravity="center_vertical"
+            android:text="Joker"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:behavior_dependTarget="-240dp"
+            app:behavior_dependType="y"
+            app:behavior_dependsOn="@+id/appBarLayout"
+            app:behavior_targetAlpha="1"
+            app:behavior_targetY="0dp"
+            app:layout_behavior="@string/simple_view_behavior" />
+
+        <ImageView
+            android:id="@+id/xx"
+            android:layout_width="wrap_content"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="end"
+            android:alpha="0"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="6dp"
+            android:src="@android:drawable/ic_menu_set_as"
+            app:behavior_dependTarget="-300dp"
+            app:behavior_dependType="y"
+            app:behavior_dependsOn="@+id/appBarLayout"
+            app:behavior_targetAlpha="1"
+            app:behavior_targetY="0dp"
+            app:layout_behavior="@string/simple_view_behavior" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

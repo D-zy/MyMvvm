@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Amy/MyMvvm/JetpackMvvm/src/main/res/drawable/fast_ic_back.xml" value="0.25794871794871793" />
+        <entry key="..\:/Amy/MyMvvm/JetpackMvvm/src/main/res/drawable/fast_ic_close.xml" value="0.25794871794871793" />
+        <entry key="..\:/Amy/MyMvvm/JetpackMvvm/src/main/res/drawable/fast_ic_failed.xml" value="0.25794871794871793" />
+        <entry key="..\:/Amy/MyMvvm/JetpackMvvm/src/main/res/drawable/fast_ic_more.xml" value="0.25794871794871793" />
+        <entry key="..\:/Amy/MyMvvm/JetpackMvvm/src/main/res/drawable/fast_ic_success.xml" value="0.25794871794871793" />
+        <entry key="..\:/Amy/MyMvvm/JetpackMvvm/src/main/res/drawable/fast_ic_warning.xml" value="0.25794871794871793" />
+        <entry key="..\:/Amy/MyMvvm/JetpackMvvm/src/main/res/drawable/ic_back.xml" value="0.15" />
+        <entry key="..\:/Amy/MyMvvm/JetpackMvvm/src/main/res/layout/layout_title_bar.xml" value="0.27239583333333334" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/drawable-v23/layerlist_splash.xml" value="0.178" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2552083333333333" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/drawable/checkbox_pwd_selector.xml" value="0.2552083333333333" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/drawable/ic_home_selected.xml" value="0.2838541666666667" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2552083333333333" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/drawable/ic_mine_selected.xml" value="0.2838541666666667" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/drawable/layerlist_splash.xml" value="0.12" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/drawable/selector_button.xml" value="0.2552083333333333" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/drawable/selector_button_radius.xml" value="0.2552083333333333" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/drawable/selector_keyboard.xml" value="0.104" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/drawable/shape_toast.xml" value="0.2640625" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/drawable/xet_bg_normal.xml" value="0.2552083333333333" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/drawable/xet_bg_selected.xml" value="0.2552083333333333" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/drawable/xet_bg_selector.xml" value="0.2552083333333333" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/aatest.xml" value="0.16666666666666666" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/activity_calculate.xml" value="0.22" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/activity_login.xml" value="0.2390625" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/activity_main.xml" value="0.16614583333333333" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/activity_main2.xml" value="0.25" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/activity_register2.xml" value="0.33" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/activity_welcome.xml" value="0.19" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/atest.xml" value="0.1470713980333476" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/banner_itemhome.xml" value="0.2390625" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/banner_itemwelcome.xml" value="0.2390625" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/fragment_deal.xml" value="0.24479166666666666" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/fragment_home2.xml" value="0.2713541666666667" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/fragment_main.xml" value="0.24791666666666667" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/fragment_me.xml" value="0.16666666666666666" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/fragment_me1.xml" value="0.2640625" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/fragment_me2.xml" value="0.1" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/fragment_me3.xml" value="0.27239583333333334" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/fragment_me4.xml" value="0.25" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/fragment_msg.xml" value="0.24479166666666666" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/item_rv_home.xml" value="0.10009267840593142" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/item_rv_home_item1.xml" value="0.13852073535699017" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/item_rv_home_item2.xml" value="0.1470713980333476" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/keyboard_popupwindow.xml" value="0.24010416666666667" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/layerlist_splash.xml" value="0.271875" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/layout_a1.xml" value="0.27239583333333334" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/layout_custom_progress_dialog_view.xml" value="0.2390625" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/layout_empty.xml" value="0.2390625" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/layout_error.xml" value="0.2390625" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/layout_fotter_loadmore.xml" value="0.2390625" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/layout_header_title.xml" value="0.21376656690893545" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/layout_loading.xml" value="0.2390625" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/layout_me_list.xml" value="0.1470713980333476" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/layout_rv_home.xml" value="0.21376656690893545" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/layout_title_bar.xml" value="0.2677083333333333" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/layout_xet.xml" value="0.2390625" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/lottie_tab_view.xml" value="0.23854166666666668" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/my_select_dialog_singlechoice_material.xml" value="0.271875" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/layout/toast_custom_view.xml" value="0.24791666666666667" />
+        <entry key="..\:/Amy/MyMvvm/app/src/main/res/menu/menu_navigation.xml" value="0.24791666666666667" />
+        <entry key="..\:/Sdk/platforms/android-31/data/res/drawable/ic_wifi_signal_3.xml" value="0.1185" />
+        <entry key="..\:/Sdk/platforms/android-31/data/res/drawable/item_background_material_dark.xml" value="0.1185" />
+        <entry key="..\:/Sdk/platforms/android-31/data/res/drawable/item_background_material_light.xml" value="0.1185" />
+        <entry key="..\:/Sdk/platforms/android-31/data/res/drawable/list_highlight_active.xml" value="0.1185" />
+        <entry key="..\:/Sdk/platforms/android-31/data/res/drawable/list_highlight_inactive.xml" value="0.1185" />
+        <entry key="..\:/Sdk/platforms/android-31/data/res/drawable/media_seamless_background.xml" value="0.1185" />
+        <entry key="..\:/Sdk/platforms/android-31/data/res/drawable/perm_group_calendar.xml" value="0.1185" />
+        <entry key="..\:/Sdk/platforms/android-31/data/res/drawable/perm_group_camera.xml" value="0.1185" />
+        <entry key="..\:/Sdk/platforms/android-31/data/res/drawable/perm_group_contacts.xml" value="0.1185" />
+        <entry key="..\:/Sdk/platforms/android-31/data/res/drawable/perm_group_location.xml" value="0.1185" />
+        <entry key="..\:/Sdk/platforms/android-31/data/res/drawable/perm_group_nearby_devices.xml" value="0.1185" />
+        <entry key="..\:/Sdk/platforms/android-31/data/res/drawable/perm_group_phone_calls.xml" value="0.1185" />
+        <entry key="..\:/Sdk/platforms/android-31/data/res/drawable/perm_group_sensors.xml" value="0.1185" />
+        <entry key="..\:/Sdk/platforms/android-31/data/res/drawable/perm_group_sms.xml" value="0.1185" />
+        <entry key="..\:/Sdk/platforms/android-31/data/res/drawable/perm_group_visual.xml" value="0.1185" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

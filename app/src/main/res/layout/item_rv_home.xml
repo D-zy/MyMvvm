@@ -1,0 +1,37 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="homeBean"
+            type="com.eg.data.model.bean.HomeBean" />
+    </data>
+
+    <TwoLineListItem
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/listPreferredItemHeight"
+        android:mode="twoLine"
+        android:paddingStart="?attr/listPreferredItemPaddingStart"
+        android:paddingEnd="?attr/listPreferredItemPaddingEnd">
+
+        <TextView
+            android:id="@id/tv1"
+            android:text="@{homeBean.tv1}"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textAppearance="?attr/textAppearanceListItem" />
+
+        <TextView
+            android:id="@id/tv2"
+            android:text="@{homeBean.tv2}"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv1"
+            android:layout_alignStart="@id/tv1"
+            android:textAppearance="?attr/textAppearanceListItemSecondary" />
+
+    </TwoLineListItem>
+
+</layout>

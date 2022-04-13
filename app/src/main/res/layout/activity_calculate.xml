@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.activity.CalculateActivity">
+
+        <include layout="@layout/layout_title_bar" />
+
+        <ScrollView
+            android:id="@+id/sv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="16dp"
+            app:layout_constraintBottom_toTopOf="@id/tvEnter"
+            app:layout_constraintTop_toBottomOf="@+id/titleBar">
+
+            <TextView
+                android:id="@+id/tvHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:gravity="end"
+                android:text=""
+                android:textSize="20sp" />
+
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/tvEnter"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_margin="16dp"
+            android:background="@null"
+            android:cursorVisible="false"
+            android:enabled="false"
+            android:gravity="end|bottom"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@id/tvResult"
+            app:layout_constraintTop_toBottomOf="@+id/sv" />
+
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginHorizontal="16dp"
+            android:gravity="end|center_vertical"
+            android:text="0"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/flow"
+            app:layout_constraintTop_toBottomOf="@+id/tvEnter" />
+
+
+        <!--
+         app:constraint_referenced_ids="tvC,tvDelete,tvDiv,tvTimes,tv7,tv8,tv9,tvMinus,tv4,tv5,tv6,tvPlus,tv1,tv2,tv3,tvEq,tvRem,tv0,tvPoint"
+         app:flow_maxElementsWrap="4"
+        -->
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flow"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:orientation="vertical"
+            app:constraint_referenced_ids="tvC,tv7,tv4,tv1,tvRem,tvDel,tv8,tv5,tv2,tv0,tvDiv,tv9,tv6,tv3,tvPoint,tvTimes,tvMinus,tvPlus,tvEq"
+            app:flow_maxElementsWrap="5"
+            app:flow_wrapMode="chain"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/tvC"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:background="@drawable/selector_keyboard"
+            android:gravity="center"
+            android:text="C"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tvDel"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:background="@drawable/selector_keyboard"
+            android:gravity="center"
+            android:text="←"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tvDiv"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:background="@drawable/selector_keyboard"
+            android:gravity="center"
+            android:text="÷"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tvTimes"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:background="@drawable/selector_keyboard"
+            android:gravity="center"
+            android:text="×"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tv7"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:background="@drawable/selector_keyboard"
+            android:gravity="center"
+            android:text="7"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tv8"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:background="@drawable/selector_keyboard"
+            android:gravity="center"
+            android:text="8"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tv9"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:background="@drawable/selector_keyboard"
+            android:gravity="center"
+            android:text="9"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tvMinus"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:background="@drawable/selector_keyboard"
+            android:gravity="center"
+            android:text="－"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tv4"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:background="@drawable/selector_keyboard"
+            android:gravity="center"
+            android:text="4"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tv5"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:background="@drawable/selector_keyboard"
+            android:gravity="center"
+            android:text="5"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tv6"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:background="@drawable/selector_keyboard"
+            android:gravity="center"
+            android:text="6"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tvPlus"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:background="@drawable/selector_keyboard"
+            android:gravity="center"
+            android:text="＋"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:background="@drawable/selector_keyboard"
+            android:gravity="center"
+            android:text="1"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:background="@drawable/selector_keyboard"
+            android:gravity="center"
+            android:text="2"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:background="@drawable/selector_keyboard"
+            android:gravity="center"
+            android:text="3"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tvEq"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:background="@drawable/selector_keyboard"
+            android:gravity="center"
+            android:text="＝"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tvRem"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:background="@drawable/selector_keyboard"
+            android:gravity="center"
+            android:text="％"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tv0"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:background="@drawable/selector_keyboard"
+            android:gravity="center"
+            android:text="0"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tvPoint"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:background="@drawable/selector_keyboard"
+            android:gravity="center"
+            android:text="·"
+            android:textSize="24sp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

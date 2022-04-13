@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.eg.viewmodel.state.MeViewModel" />
+    </data>
+
+
+    <!--    <com.eg.app.behavior.ParallaxScrollView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:fillViewport="true"-->
+    <!--        android:layout_height="match_parent">-->
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/rootView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/app"
+            android:fitsSystemWindows="true"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            app:elevation="0dp"
+            app:layout_behavior="@string/appbar_layout_overscrollview_behavior">
+
+            <!--                app:statusBarScrim="#FFC107"-->
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/toolbar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentScrim="@color/app"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <ImageView
+                    android:id="@+id/iv_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="280dp"
+                    android:tag="overScroll"
+                    app:layout_collapseMode="parallax" />
+
+                <com.eg.app.behavior.DisInterceptNestedScrollView
+                    android:id="@+id/middle_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:tag="middle"
+                    app:layout_collapseMode="parallax"
+                    app:layout_collapseParallaxMultiplier="0.5">
+
+                    <LinearLayout
+                        android:id="@+id/llcontent"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center|top"
+                        android:layout_marginTop="?attr/actionBarSize"
+                        android:orientation="vertical"
+                        android:paddingBottom="30dp"
+                        android:tag="middle">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="70dp"
+                            android:drawablePadding="3dp"
+                            android:gravity="center_vertical"
+                            android:text="我的在线简历"
+                            android:textSize="14sp"
+                            app:drawableStartCompat="@android:drawable/ic_lock_idle_charging" />
+
+                        <com.allen.library.CircleImageView
+                            android:id="@+id/avater"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="top|end"
+                            android:layout_marginTop="-80dp"
+                            android:layout_marginEnd="16dp"
+                            android:elevation="10dp"
+                            android:src="@drawable/ic_avater" />
+
+                        <include
+                            layout="@layout/layout_a1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="40dp" />
+
+                    </LinearLayout>
+                </com.eg.app.behavior.DisInterceptNestedScrollView>
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!--        app:behavior_overlapTop="80dp"-->
+
+        <com.eg.app.behavior.DisInterceptNestedScrollView
+            android:id="@+id/ns"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="60dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:layout_marginTop="10dp"
+                    android:text="常用功能"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!--ConstraintLayout 2.0新特性解析
+                 https://www.jianshu.com/p/568e3c22e9db-->
+
+                <androidx.constraintlayout.helper.widget.Flow
+                    android:id="@+id/flow1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="15dp"
+                    app:constraint_referenced_ids="tv8,tv9,tv10,tv11"
+                    app:flow_verticalAlign="top"
+                    app:layout_constraintTop_toBottomOf="@+id/tv7" />
+
+                <TextView
+                    android:id="@+id/tv8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="4dp"
+                    android:gravity="center"
+                    android:text="在线简历"
+                    app:drawableTopCompat="@android:drawable/ic_menu_more" />
+                <!--                    app:drawableTopCompat="@android:drawable/ic_menu_more" />-->
+                <!--                    app:drawableTopCompat="@android:drawable/ic_menu_attachment" />-->
+
+
+                <TextView
+                    android:id="@+id/tv9"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="4dp"
+                    android:gravity="center"
+                    android:text="附件简历\n已上传2份"
+                    app:drawableTopCompat="@android:drawable/ic_menu_always_landscape_portrait" />
+
+                <TextView
+                    android:id="@+id/tv10"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="4dp"
+                    android:gravity="center"
+                    android:text="求职意向"
+                    app:drawableTopCompat="@android:drawable/ic_menu_set_as" />
+
+                <TextView
+                    android:id="@+id/tv11"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="4dp"
+                    android:gravity="center"
+                    android:text="道具商城\n直豆/其他"
+                    app:drawableTopCompat="@android:drawable/ic_menu_upload" />
+
+                <TextView
+                    android:id="@+id/des2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:layout_marginTop="10dp"
+                    android:text="其他功能"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/flow1" />
+
+                <androidx.constraintlayout.helper.widget.Flow
+                    android:id="@+id/flow2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="15dp"
+                    app:constraint_referenced_ids="tv12,tv13,tv14,tv15,tv16,tv17,tv18,tv19,tv20,tv21"
+                    app:flow_maxElementsWrap="4"
+                    app:flow_verticalGap="10dp"
+                    app:flow_wrapMode="aligned"
+                    app:layout_constraintTop_toBottomOf="@+id/des2" />
+
+                <TextView
+                    android:id="@+id/tv12"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="4dp"
+                    android:gravity="center"
+                    android:text="个人主页"
+                    app:drawableTopCompat="@android:drawable/ic_menu_myplaces" />
+
+                <TextView
+                    android:id="@+id/tv13"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="4dp"
+                    android:gravity="center"
+                    android:text="众裁厅"
+                    app:drawableTopCompat="@android:drawable/ic_menu_my_calendar" />
+
+                <TextView
+                    android:id="@+id/tv14"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="4dp"
+                    android:gravity="center"
+                    android:text="直直公益"
+                    app:drawableTopCompat="@android:drawable/ic_menu_save" />
+
+                <TextView
+                    android:id="@+id/tv15"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="4dp"
+                    android:gravity="center"
+                    android:text="帮助反馈"
+                    app:drawableTopCompat="@android:drawable/ic_menu_add" />
+
+                <TextView
+                    android:id="@+id/tv16"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="4dp"
+                    android:gravity="center"
+                    android:text="我的客服"
+                    app:drawableTopCompat="@android:drawable/ic_menu_call" />
+
+                <TextView
+                    android:id="@+id/tv17"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="4dp"
+                    android:gravity="center"
+                    android:text="安全治理"
+                    app:drawableTopCompat="@android:drawable/ic_menu_add" />
+
+                <TextView
+                    android:id="@+id/tv18"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="4dp"
+                    android:gravity="center"
+                    android:text="防骗指南"
+                    app:drawableTopCompat="@android:drawable/ic_menu_help" />
+
+                <TextView
+                    android:id="@+id/tv19"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="4dp"
+                    android:gravity="center"
+                    android:text="关于"
+                    app:drawableTopCompat="@android:drawable/ic_menu_info_details" />
+
+                <TextView
+                    android:id="@+id/tv20"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="4dp"
+                    android:gravity="center"
+                    android:text="薪酬查询"
+                    app:drawableTopCompat="@android:drawable/ic_menu_zoom" />
+
+                <TextView
+                    android:id="@+id/tv21"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="4dp"
+                    android:gravity="center"
+                    android:text="规则公示"
+                    app:drawableTopCompat="@android:drawable/ic_menu_save" />
+
+                <!--                <androidx.appcompat.widget.AppCompatButton-->
+                <!--                    android:visibility="gone"-->
+                <!--                    android:id="@+id/logout"-->
+                <!--                    style="@style/ButtonPress"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="48dp"-->
+                <!--                    android:layout_marginHorizontal="40dp"-->
+                <!--                    android:layout_marginTop="120dp"-->
+                <!--                    android:background="@drawable/selector_button_radius"-->
+                <!--                    android:gravity="center"-->
+                <!--                    android:text="退出"-->
+                <!--                    app:layout_constraintTop_toBottomOf="@id/xet_pwd" />-->
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.eg.app.behavior.DisInterceptNestedScrollView>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_marginHorizontal="10dp"
+            android:paddingHorizontal="10dp"
+            app:layout_anchor="@id/appBarLayout"
+            app:layout_anchorGravity="bottom|center">
+
+            <com.aries.ui.view.radius.RadiusLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="40dp"
+                android:gravity="bottom"
+                app:rv_backgroundColor="#AAA39A"
+                app:rv_radius="10dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <TextView
+                        android:id="@+id/tv3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="简历刷新"
+                        android:textColor="#000"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:drawableLeftCompat="@android:drawable/ic_menu_mylocation"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="2dp"
+                        android:gravity="center_vertical"
+                        android:text="提升曝光"
+                        android:textColor="#88000000"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBaseline_toBaselineOf="@id/tv3"
+                        app:layout_constraintLeft_toRightOf="@id/tv3" />
+
+                    <View
+                        android:id="@+id/v1"
+                        android:layout_width="1dp"
+                        android:layout_height="20dp"
+                        android:background="@color/black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="竞争力分析"
+                        android:textColor="#000"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:drawableLeftCompat="@android:drawable/ic_menu_my_calendar"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@+id/v1" />
+
+                    <TextView
+                        android:id="@+id/tv6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="2dp"
+                        android:gravity="center_vertical"
+                        android:text="洞悉竞争"
+                        android:textColor="#88000000"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBaseline_toBaselineOf="@id/tv5"
+                        app:layout_constraintLeft_toRightOf="@id/tv5" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </com.aries.ui.view.radius.RadiusLinearLayout>
+
+            <com.aries.ui.view.radius.RadiusRelativeLayout
+                android:id="@+id/rrl"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="10dp"
+                app:rv_backgroundColor="#E6D5BD"
+                app:rv_radius="10dp">
+
+                <TextView
+                    android:id="@+id/tv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="升级VIP专享求职特权"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv1"
+                    android:layout_marginTop="3dp"
+                    android:text="8项专属特权加倍提升求职效率"
+                    android:textColor="#88000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <com.allen.library.SuperButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:paddingHorizontal="10dp"
+                    android:text="去升级>"
+                    android:textColor="#E6D5BD"
+                    app:sCornersRadius="30dp"
+                    app:sSolidColor="@color/black" />
+
+            </com.aries.ui.view.radius.RadiusRelativeLayout>
+
+
+        </FrameLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/titlebar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/app">
+
+
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!--       <TextView
+                   android:id="@+id/name"
+                   android:layout_width="wrap_content"
+                   android:layout_height="40dp"
+                   android:layout_gravity="top"
+                   android:layout_marginStart="16dp"
+                   android:layout_marginTop="?attr/actionBarSize"
+                   android:elevation="10dp"
+                   android:src="@drawable/ic_avater"
+                   android:text="Joker"
+                   android:textColor="@color/white"
+                   android:textSize="32sp"
+                   android:textStyle="bold"
+                   app:behavior_dependTarget="-200dp"
+                   app:behavior_dependType="y"
+                   app:behavior_dependsOn="@+id/app_bar"
+                   app:behavior_targetScale="0.7"
+                   app:behavior_targetX="0dp"
+                   app:behavior_targetY="0dp"
+                   app:layout_behavior="@string/simple_view_behavior" />-->
+
+        <!--        <com.allen.library.CircleImageView-->
+        <!--            android:id="@+id/avater"-->
+        <!--            android:layout_width="80dp"-->
+        <!--            android:layout_height="80dp"-->
+        <!--            android:layout_gravity="top|end"-->
+        <!--            android:layout_marginEnd="30dp"-->
+        <!--            android:layout_marginTop="100dp"-->
+        <!--            android:elevation="10dp"-->
+        <!--            android:src="@drawable/ic_avater"-->
+        <!--            app:behavior_dependTarget="-260dp"-->
+        <!--            app:behavior_dependType="y"-->
+        <!--            app:behavior_dependsOn="@+id/app_bar"-->
+        <!--            app:behavior_targetHeight="30dp"-->
+        <!--            app:behavior_targetWidth="30dp"-->
+        <!--            app:behavior_targetX="16dp"-->
+        <!--            app:behavior_targetY="8dp" />-->
+
+        <!--        <TextView-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="?attr/actionBarSize"-->
+        <!--            android:layout_marginStart="72dp"-->
+        <!--            android:layout_marginTop="-100dp"-->
+        <!--            android:alpha="0"-->
+        <!--            android:elevation="10dp"-->
+        <!--            android:gravity="center_vertical"-->
+        <!--            android:text="Joker"-->
+        <!--            android:textColor="@color/white"-->
+        <!--            android:textSize="18sp"-->
+        <!--            app:behavior_dependTarget="-240dp"-->
+        <!--            app:behavior_dependType="y"-->
+        <!--            app:behavior_dependsOn="@+id/app_bar"-->
+        <!--            app:behavior_targetAlpha="1"-->
+        <!--            app:behavior_targetY="0dp"-->
+        <!--            app:layout_behavior="@string/simple_view_behavior" />-->
+
+        <ImageView
+            android:id="@+id/logout"
+            android:layout_width="wrap_content"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="end"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="6dp"
+            android:src="@android:drawable/ic_menu_day"
+            android:tintMode="@color/white" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <!--    </com.eg.app.behavior.ParallaxScrollView>-->
+
+</layout>

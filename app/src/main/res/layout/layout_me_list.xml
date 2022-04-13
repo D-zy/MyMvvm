@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="60dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginTop="10dp"
+        android:text="常用功能"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--ConstraintLayout 2.0新特性解析
+     https://www.jianshu.com/p/568e3c22e9db-->
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="15dp"
+        app:constraint_referenced_ids="tv8,tv9,tv10,tv11"
+        app:flow_verticalAlign="top"
+        app:layout_constraintTop_toBottomOf="@+id/tv7" />
+
+    <TextView
+        android:id="@+id/tv8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawablePadding="4dp"
+        android:gravity="center"
+        android:text="在线简历"
+        app:drawableTopCompat="@android:drawable/ic_menu_more" />
+    <!--                    app:drawableTopCompat="@android:drawable/ic_menu_more" />-->
+    <!--                    app:drawableTopCompat="@android:drawable/ic_menu_attachment" />-->
+
+
+    <TextView
+        android:id="@+id/tv9"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawablePadding="4dp"
+        android:gravity="center"
+        android:text="附件简历\n已上传2份"
+        app:drawableTopCompat="@android:drawable/ic_menu_always_landscape_portrait" />
+
+    <TextView
+        android:id="@+id/tv10"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawablePadding="4dp"
+        android:gravity="center"
+        android:text="求职意向"
+        app:drawableTopCompat="@android:drawable/ic_menu_set_as" />
+
+    <TextView
+        android:id="@+id/tv11"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawablePadding="4dp"
+        android:gravity="center"
+        android:text="道具商城\n直豆/其他"
+        app:drawableTopCompat="@android:drawable/ic_menu_upload" />
+
+    <TextView
+        android:id="@+id/des2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginTop="10dp"
+        android:text="其他功能"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flow1" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="15dp"
+        app:constraint_referenced_ids="tv12,tv13,tv14,tv15,tv16,tv17,tv18,tv19,tv20,tv21"
+        app:flow_maxElementsWrap="4"
+        app:flow_verticalGap="10dp"
+        app:flow_wrapMode="aligned"
+        app:layout_constraintTop_toBottomOf="@+id/des2" />
+
+    <TextView
+        android:id="@+id/tv12"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawablePadding="4dp"
+        android:gravity="center"
+        android:text="个人主页"
+        app:drawableTopCompat="@android:drawable/ic_menu_myplaces" />
+
+    <TextView
+        android:id="@+id/tv13"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawablePadding="4dp"
+        android:gravity="center"
+        android:text="众裁厅"
+        app:drawableTopCompat="@android:drawable/ic_menu_my_calendar" />
+
+    <TextView
+        android:id="@+id/tv14"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawablePadding="4dp"
+        android:gravity="center"
+        android:text="直直公益"
+        app:drawableTopCompat="@android:drawable/ic_menu_save" />
+
+    <TextView
+        android:id="@+id/tv15"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawablePadding="4dp"
+        android:gravity="center"
+        android:text="帮助反馈"
+        app:drawableTopCompat="@android:drawable/ic_menu_add" />
+
+    <TextView
+        android:id="@+id/tv16"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawablePadding="4dp"
+        android:gravity="center"
+        android:text="我的客服"
+        app:drawableTopCompat="@android:drawable/ic_menu_call" />
+
+    <TextView
+        android:id="@+id/tv17"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawablePadding="4dp"
+        android:gravity="center"
+        android:text="安全治理"
+        app:drawableTopCompat="@android:drawable/ic_menu_add" />
+
+    <TextView
+        android:id="@+id/tv18"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawablePadding="4dp"
+        android:gravity="center"
+        android:text="防骗指南"
+        app:drawableTopCompat="@android:drawable/ic_menu_help" />
+
+    <TextView
+        android:id="@+id/tv19"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawablePadding="4dp"
+        android:gravity="center"
+        android:text="关于"
+        app:drawableTopCompat="@android:drawable/ic_menu_info_details" />
+
+    <TextView
+        android:id="@+id/tv20"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawablePadding="4dp"
+        android:gravity="center"
+        android:text="薪酬查询"
+        app:drawableTopCompat="@android:drawable/ic_menu_zoom" />
+
+    <TextView
+        android:id="@+id/tv21"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawablePadding="4dp"
+        android:gravity="center"
+        android:text="规则公示"
+        app:drawableTopCompat="@android:drawable/ic_menu_save" />
+
+    <!--                <androidx.appcompat.widget.AppCompatButton-->
+    <!--                    android:visibility="gone"-->
+    <!--                    android:id="@+id/logout"-->
+    <!--                    style="@style/ButtonPress"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="48dp"-->
+    <!--                    android:layout_marginHorizontal="40dp"-->
+    <!--                    android:layout_marginTop="120dp"-->
+    <!--                    android:background="@drawable/selector_button_radius"-->
+    <!--                    android:gravity="center"-->
+    <!--                    android:text="退出"-->
+    <!--                    app:layout_constraintTop_toBottomOf="@id/xet_pwd" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

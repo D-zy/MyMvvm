@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/fl_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/diverLine"
+            app:layout_constraintBottom_toTopOf="@id/tab_layout" />
+
+        <LinearLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:clipChildren="false"
+            android:background="@color/white"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <com.eg.app.weight.LottieTabView
+                android:id="@+id/tab_view_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:icon_normal="@drawable/ic_main_normal"
+                app:lottie_path="home.json"
+                app:tab_name="首页"
+                app:tab_selected="true"
+                app:text_normal_color="#666666"
+                app:text_selected_color="@color/app"
+                app:text_size="9sp" />
+
+            <com.eg.app.weight.LottieTabView
+                android:id="@+id/tab_view_deal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                app:icon_normal="@drawable/ic_deal_normal"
+                app:lottie_path="msg.json"
+                app:tab_name="交易"
+                app:tab_selected="false"
+                app:text_normal_color="#666666"
+                app:text_selected_color="@color/app"
+                app:text_size="9sp" />
+
+            <!--                <ImageView-->
+            <!--                    android:id="@+id/main_add_btn"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginLeft="3dp"-->
+            <!--                    android:layout_marginBottom="22dp"-->
+            <!--                    android:layout_weight="1"-->
+            <!--                    android:scaleType="fitCenter"-->
+            <!--                    android:src="@drawable/ic_main_add" />-->
+
+            <com.eg.app.weight.LottieTabView
+                android:id="@+id/tab_view_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                app:icon_normal="@drawable/ic_msg_normal"
+                app:lottie_path="trade.json"
+                app:tab_name="消息"
+                app:tab_selected="false"
+                app:text_normal_color="#666666"
+                app:text_selected_color="@color/app"
+                app:text_size="9sp" />
+
+            <com.eg.app.weight.LottieTabView
+                android:id="@+id/tab_view_mine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:icon_normal="@drawable/ic_mine_normal"
+                app:lottie_path="user.json"
+                app:tab_name="我的"
+                app:tab_selected="false"
+                app:text_normal_color="#666666"
+                app:text_selected_color="@color/app"
+                app:text_size="9sp" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

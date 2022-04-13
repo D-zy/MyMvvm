@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2196F3</color>
+    <color name="colorPrimaryDark">#2196F3</color>
+    <color name="colorAccent">#2196F3</color>
+
+    <color name="background_normal">#ffffff</color>
+    <color name="background_pressed">#f7f6f6</color>
+
+    <color name="app">#2196F3</color>
+    <color name="textHint">#999999</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="color666">#666</color>
+    <color name="color333">#333</color>
+    <color name="colorf8f8f8">#f8f8f8</color>
+    <color name="colorB2B2B2">#B2B2B2</color>
+    <color name="windowBackground">#F5F5F5</color>
+    <color name="background">#d8d8d8</color>
+    <color name="backgroundeee">#eeeeee</color>
+    <color name="colorGray">#CCCCCC</color>
+    <color name="diverLine">#cecece</color>
+
+    <!--渐变正常，按压时 开始和结束颜色-->
+    <color name="gradient_normal_start_color">#7FBDEF</color>
+    <color name="gradient_normal_end_color">#4FA9F1</color>
+    <color name="gradient_press_start_color">#40A1EF</color>
+    <color name="gradient_press_end_color">#2196F3</color>
+    <color name="gradient_unenable_start_color">#D1E4F3</color>
+    <color name="gradient_unenable_end_color">#98C2E4</color>
+</resources>

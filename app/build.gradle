@@ -1,0 +1,196 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 30
+        versionCode 1
+        versionName "1.0"
+        flavorDimensions "default"
+        multiDexEnabled true
+        buildConfigField "String", "BASE_URL", "\"https://wanandroid.com/\""
+        /* ndk {
+              // 设置支持的SO库架构
+              abiFilters 'armeabi','armeabi-v7a'
+          }*/
+    }
+
+    buildFeatures {
+        //这2个为非必选，想用哪个就保留那个 用的话一定要加上项目中的 ViewBinding & DataBinding 混淆规则
+        dataBinding = true
+        viewBinding = true
+    }
+
+
+//    //使用Kotlin实验特性
+//    androidExtensions {
+//        experimental = true
+//    }
+
+    signingConfigs {
+        config {
+            storeFile file(StoreFile)
+            storePassword StorePassword
+            keyAlias KeyAlias
+            keyPassword KeyPassword
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            zipAlignEnabled false
+            signingConfig signingConfigs.config
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            minifyEnabled true//开启混淆
+            shrinkResources true
+            zipAlignEnabled true//去除无用资源
+            signingConfig signingConfigs.config
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    productFlavors {
+        dev {
+            applicationId "com.eg.dev"
+            buildConfigField "String", "payURL", '"220.248.45.125:18998"'
+            manifestPlaceholders = [app_name: "Mvvm-dev"]
+        }
+        uat {
+            applicationId "com.eg.uat"
+            buildConfigField "String", "payURL", '"220.248.45.125:8300"'
+            manifestPlaceholders = [app_name: "Mvvm-rel"]
+        }
+        prod {
+            applicationId "com.eg.prod"
+            buildConfigField "String", "payURL", '"115.42.252.50:8000"'
+            manifestPlaceholders = [app_name: "Mvvm-prod"]
+        }
+    }
+
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            outputFileName = "v${defaultConfig.versionName}" + "-${variant.flavorName}" + "-${packTime()}.apk"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    lintOptions {
+        disable 'InvalidPackage'
+        disable "ResourceType"
+        abortOnError false
+    }
+}
+
+static packTime() {
+    return new Date().format("MMddHHmm", TimeZone.getTimeZone("GMT+08"))
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    //这个不要改成1.4.0  否则BottomNavigationViewEx 会报错
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+
+    //项目核心框架
+    implementation project(path: ':JetpackMvvm')
+
+    implementation 'com.android.support:multidex:1.0.3'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.4'
+    //androidx UI
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+    //下拉刷新库
+//    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'
+//    //下拉刷新头部
+//    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.5.1'
+
+    implementation  'com.scwang.smart:refresh-layout-kernel:2.0.3'      //核心必须依赖
+    implementation  'com.scwang.smart:refresh-header-classics:2.0.3'    //经典刷新头
+    implementation  'com.scwang.smart:refresh-header-material:2.0.3'    //谷歌刷新头
+
+//    implementation 'androidx.preference:preference-ktx:1.1.1'
+    //dialog  https://gitcode.net/mirrors/afollestad/material-dialogs?utm_source=csdn_github_accelerator
+    //        https://www.it610.com/article/1295525576660033536.htm
+    implementation "com.afollestad.material-dialogs:lifecycle:3.3.0"
+    implementation "com.afollestad.material-dialogs:core:3.3.0"
+//    implementation "com.afollestad.material-dialogs:color:3.3.0"
+//    implementation "com.afollestad.material-dialogs:datetime:3.3.0"
+//    implementation "com.afollestad.material-dialogs:bottomsheets:3.3.0"
+//    implementation 'com.afollestad.material-dialogs:input:3.3.0'
+//    implementation 'com.afollestad.material-dialogs:files:3.3.0'
+    //https://github.com/Blankj/AndroidUtilCode
+    implementation 'com.blankj:utilcodex:1.30.6'
+    //底部bottomBar
+
+    implementation 'com.github.ittianyu:BottomNavigationViewEx:2.0.4'
+//    implementation 'com.google.android.material.bottomnavigation.BottomNavigationView:2.0.4'
+    //RevealLayout  https://www.jianshu.com/p/142bb46955e0
+    implementation 'com.github.goweii:RevealLayout:1.1.1'
+    //微信开源项目，替代SP
+    implementation 'com.tencent:mmkv:1.2.10'
+    //轮播图
+    implementation 'com.github.zhpanvip:BannerViewPager:3.1.5'
+    //BaseAdapter
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.7'
+    //第三方recyclerview
+    implementation 'com.yanzhenjie.recyclerview:x:1.3.2'
+    //管理界面状态库
+    implementation 'com.kingja.loadsir:loadsir:1.3.8'
+    //指示器库
+    implementation 'com.github.hackware1993:MagicIndicator:1.7.0'
+    //官方的
+    implementation 'com.google.android:flexbox:2.0.1'
+    //加载webview
+    implementation 'com.just.agentweb:agentweb:4.1.4'
+    implementation 'com.just.agentweb:filechooser:4.1.3'
+    implementation 'com.download.library:Downloader:4.1.4'
+
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    //屏幕适配
+    implementation 'me.jessyan:autosize:1.2.1'
+    //防崩溃
+    implementation 'cat.ereza:customactivityoncrash:2.3.0'
+    //下载
+    implementation("com.liulishuo.filedownloader:library:1.7.7") {
+        exclude group: "com.android.support"
+    }
+    implementation 'com.louiscad.splitties:splitties-collections:2.1.1'
+    //吐司框架：https://github.com/getActivity/ToastUtils
+    implementation 'com.github.getActivity:ToastUtils:10.0'
+
+    implementation 'com.github.lygttpod:SuperTextView:2.4.6'
+    //反射
+    implementation 'org.jetbrains.kotlin:kotlin-reflect:1.6.0'
+    //协程
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.1'
+    //权限请求
+    implementation 'com.github.getActivity:XXPermissions:12.5'
+
+    implementation 'com.airbnb.android:lottie:4.1.0'
+    //文件选择器
+    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.6.1'
+    //弹性拉伸
+    implementation 'io.github.everythingme:overscroll-decor-android:1.1.1'
+}
